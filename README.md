@@ -1,0 +1,2 @@
+# projminor
+ minorproj
