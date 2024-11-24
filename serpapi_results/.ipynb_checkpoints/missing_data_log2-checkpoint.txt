@@ -1,0 +1,6 @@
+No data found for the following State-Search Term combinations:
+State: PE, Search Term: febre do mosquito
+State: AL, Search Term: febre do mosquito
+State: AL, Search Term: tratamento para dengue
+State: SE, Search Term: febre do mosquito
+State: SE, Search Term: repelente contra dengue

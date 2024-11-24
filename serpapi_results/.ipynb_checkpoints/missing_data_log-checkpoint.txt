@@ -1,0 +1,7 @@
+No data found for the following State-Search Term combinations:
+State: MS, Search Term: febre do mosquito
+State: MS, Search Term: repelente contra dengue
+State: MT, Search Term: repelente contra dengue
+State: MT, Search Term: tratamento para dengue
+State: GO, Search Term: tratamento para dengue
+State: DF, Search Term: sintomas dengue

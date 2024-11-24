@@ -150,7 +150,7 @@ CNN_SETTINGS = {
     'EARLY STOPPING': 100
 }
 
-DEP_NAMES = {
+DEP_NAMES1 = {
     0:'Rondônia',
     1:'Acre',
     2:'Amazonas',
@@ -178,4 +178,33 @@ DEP_NAMES = {
     24:'Mato Grosso',
     25:'Goiás',
     26:'Distrito Federal'
+}
+DEP_NAMES = {
+    11: 'Rondônia',
+    12: 'Acre',
+    13: 'Amazonas',
+    14: 'Roraima',
+    15: 'Pará',
+    16: 'Amapá',
+    17: 'Tocantins',
+    21: 'Maranhão',
+    22: 'Piauí',
+    23: 'Ceará',
+    24: 'Rio Grande do Norte',
+    25: 'Paraíba',
+    26: 'Pernambuco',
+    27: 'Alagoas',
+    28: 'Sergipe',
+    29: 'Bahia',
+    31: 'Minas Gerais',
+    32: 'Espírito Santo',
+    33: 'Rio de Janeiro',
+    35: 'São Paulo',
+    41: 'Paraná',
+    42: 'Santa Catarina',
+    43: 'Rio Grande do Sul',
+    50: 'Mato Grosso do Sul',
+    51: 'Mato Grosso',
+    52: 'Goiás',
+    53: 'Distrito Federal'
 }

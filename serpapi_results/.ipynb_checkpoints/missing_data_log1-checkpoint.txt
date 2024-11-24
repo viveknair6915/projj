@@ -1,0 +1,24 @@
+No data found for the following State-Search Term combinations:
+State: RO, Search Term: mosquito da dengue
+State: RO, Search Term: febre do mosquito
+State: RO, Search Term: repelente contra dengue
+State: RO, Search Term: tratamento para dengue
+State: AC, Search Term: febre do mosquito
+State: AC, Search Term: repelente contra dengue
+State: AM, Search Term: repelente contra dengue
+State: RR, Search Term: sintomas de dengue
+State: RR, Search Term: mosquito da dengue
+State: RR, Search Term: febre do mosquito
+State: RR, Search Term: repelente contra dengue
+State: RR, Search Term: tratamento para dengue
+State: PA, Search Term: tratamento para dengue
+State: AP, Search Term: repelente contra dengue
+State: AP, Search Term: mosquito
+State: TO, Search Term: tratamento para dengue
+State: MA, Search Term: febre do mosquito
+State: MA, Search Term: repelente contra dengue
+State: PI, Search Term: mosquito
+State: PI, Search Term: tratamento para dengue
+State: RN, Search Term: febre do mosquito
+State: RN, Search Term: repelente contra dengue
+State: PB, Search Term: tratamento para dengue
