@@ -62,7 +62,32 @@ class datasetHandler:
                 y_val[counter, ..., t_prediction:] = data[count2 + t_window_size:count2 + t_window_size + t_prediction, -1]
                 counter += 1
 
-        return x_train, y_train, x_val, y_val
+                    # Initialize to store used indices
+        train_indices = []
+        val_indices = []
+    
+        # Training data preparation
+        for count, dep in enumerate(departments):
+            db_dep = self.training[self.training.dep_id == dep]
+            data = db_dep.to_numpy()
+    
+            for count2 in range(len_series):
+                # Record indices used in training
+                train_indices.append(db_dep.iloc[count2 + t_window_size].name)
+    
+        # Validation data preparation
+        for count, dep in enumerate(departments):
+            db_dep = self.validation[self.validation.dep_id == dep]
+            data = db_dep.to_numpy()
+    
+            for count2 in range(len_series):
+                # Record indices used in validation
+                val_indices.append(db_dep.iloc[count2 + t_window_size].name)
+    
+        # Return the used indices alongside data
+        return x_train, y_train, x_val, y_val, train_indices, val_indices
+        
+        # return x_train, y_train, x_val, y_val
 
     def augment(self, x_train, y_train, x_val, y_val, multiplier = 3):
         x_train_a = np.zeros((multiplier*x_train.shape[0], x_train.shape[1], x_train.shape[2]))

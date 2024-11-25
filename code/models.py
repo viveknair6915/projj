@@ -407,7 +407,7 @@ class CatBoostNet:
 
         # Save the final model
         today = datetime.now().strftime("%d-%m-%Y-%H-%M-%S")
-        final_model_path = os.path.join(output_path, f'CATBOOST-{today}')
+        final_model_path = os.path.join(output_path)
         self.model.save_model(final_model_path)
 
 
