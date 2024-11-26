@@ -16,6 +16,7 @@ def plist(l):
     
 
 def clean(db):
+    print("Cleaning dataframe...")
     db['rate_total'] =  (db['cases_total']/db['PopTotal_UF'])*(100000.0)
     db['rate_019']   =  (db['cases0_19']/db['Pop0_19_UF'])*(100000.0)
     db = db.drop(columns=['Pop0_19_Urban_UF', 'Pop0_19_Rural_UF', 'Pop0_19_UF', 'PopTotal_UF', 'cases_total'])
