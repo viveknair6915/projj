@@ -1,0 +1,2 @@
+Department,MAE (DengRate_all) Val,MSE (DengRate_all) Val,RMSE (DengRate_all) Val,MAPE (DengRate_all) Val,R2 (DengRate_all) Val,MAE (DengRate_all) Train,MSE (DengRate_all) Train,RMSE (DengRate_all) Train,MAPE (DengRate_all) Train,R2 (DengRate_all) Train
+Rondônia,32.995265990716156,1548.9061612917349,39.35614515284411,1.1376205281361986,-0.22361101117156812,78.8482340110813,9608.108571846633,98.02095985985157,9463184479311204.0,-0.38305281243830236
