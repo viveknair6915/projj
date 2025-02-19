@@ -93,6 +93,20 @@ DATA_PROCESSING_SETTINGS = {
     'AUGMENTATION': 3
 }
 
+
+TCN_SETTINGS = {
+    'EPOCHS': 200,
+    'LEARNING_RATE': 0.0001,
+    'BATCH_SIZE': 16,
+    'OPTIMIZER': 'adam',
+    'LOSS': 'Huber',
+    'EVALUATION_METRIC': ['mae', 'mse'],
+    'EARLY_STOPPING_PATIENCE': 12,
+    'NUM_FILTERS': 64,
+    'DILATION_RATES': [1, 2, 4, 8],
+    'DROPOUT_RATE': 0.3,  # for residual blocks
+    'INITIAL_DROPOUT_RATE': 0.2  # for the initial conv layer
+}
 LSTM_SETTINGS = {
     'EPOCHS': 200,
     'LEARNING RATE': 0.0001,
@@ -100,7 +114,7 @@ LSTM_SETTINGS = {
     'OPTIMZER': 'rmsprop', #'adam',
     'LOSS':'mae',
     'EVALUATION METRIC':['mse'],
-    'EARLY STOPPING': 12
+    'EARLY STOPPING': 24
 }
 
 CATBOOST_SETTINGS = {

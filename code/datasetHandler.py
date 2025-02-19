@@ -1,42 +1,44 @@
 import pandas as pd
 import numpy as np
-
-
+import logging
+logging.basicConfig(level=logging.INFO)
+    
 class datasetHandler:
-
+    
     def __init__(self, train_dataframe, val_dataframe):
         self.training = train_dataframe
         self.validation = val_dataframe
-
+    
     def get_data(self, t_window_size, t_prediction):
-
+    
         # Get the first department to asses data dimensions
+        logging.info(f"Preparing data with window size {t_window_size} and prediction horizon {t_prediction}")
         departments = pd.unique(self.training.dep_id)
         db_dep = self.training[self.training.dep_id == departments[0]]
         # len_series = db_dep.shape[0] - (t_window_size + t_prediction)
         len_series = db_dep.shape[0] - (t_window_size)
-
+    
         # Initialize training dataset
         x_train = np.zeros((len_series*len(departments), t_window_size, self.training.shape[1]))
         y_train = np.zeros((len_series*len(departments), 2*t_prediction))
         print('X Training shape', x_train.shape)
-        print('Y Training shape', x_train.shape)
-
-        # Fill the training set
+        print('Y Training shape', y_train.shape)
+    
+            # Fill the training set
         counter = 0
         for count, dep in enumerate(departments):
             db_dep = self.training[self.training.dep_id == dep]
             data = db_dep.to_numpy()
-
+    
             print('\rProcessing departments {} of {}'.format(count, len(departments)), end='\t\t')
-
+    
             for count2 in range(len_series):
                 x_train[counter, ...] = data[count2 : (count2)+t_window_size, :]
                 y_train[counter, ..., :t_prediction] = data[(count2 + t_window_size) : (count2 + t_window_size + t_prediction), -2]
                 y_train[counter, ..., t_prediction:] = data[(count2 + t_window_size) : (count2 + t_window_size + t_prediction), -1]
                 counter+=1
-
-        #  Get the first department to asses data dimensions
+    
+            #  Get the first department to asses data dimensions
         departments = pd.unique(self.validation.dep_id)
         db_dep = self.validation[self.validation.dep_id == departments[0]]
         # len_series  = db_dep.shape[0] - (t_window_size + t_prediction)
@@ -66,29 +68,29 @@ class datasetHandler:
         train_indices = []
         val_indices = []
     
-        # Training data preparation
+            # Training data preparation
         for count, dep in enumerate(departments):
             db_dep = self.training[self.training.dep_id == dep]
             data = db_dep.to_numpy()
-    
+        
             for count2 in range(len_series):
                 # Record indices used in training
                 train_indices.append(db_dep.iloc[count2 + t_window_size].name)
-    
+        
         # Validation data preparation
         for count, dep in enumerate(departments):
             db_dep = self.validation[self.validation.dep_id == dep]
             data = db_dep.to_numpy()
-    
+        
             for count2 in range(len_series):
                 # Record indices used in validation
                 val_indices.append(db_dep.iloc[count2 + t_window_size].name)
     
-        # Return the used indices alongside data
+           # Return the used indices alongside data
         return x_train, y_train, x_val, y_val, train_indices, val_indices
-        
+            
         # return x_train, y_train, x_val, y_val
-
+    
     def augment(self, x_train, y_train, x_val, y_val, multiplier = 3):
         x_train_a = np.zeros((multiplier*x_train.shape[0], x_train.shape[1], x_train.shape[2]))
         y_train_a = np.zeros((multiplier*y_train.shape[0], y_train.shape[1]))
@@ -103,10 +105,25 @@ class datasetHandler:
 
         return x_train_a, y_train_a, x_val_a, y_val_a
 
+    
     def prepare_data_LSTM(self, x_train, y_train, x_val, y_val):
         return (x_train, y_train), (x_val, y_val)
-
+    
     def prepare_data_CatBoost(self, x_train, y_train, x_val, y_val):
         x_train = x_train.reshape((x_train.shape[0], x_train.shape[1]*x_train.shape[2]))
         x_val   =   x_val.reshape((x_val.shape[0],   x_val.shape[1]*x_val.shape[2]))
         return (x_train, y_train), (x_val, y_val)
+
+    def prepare_data_TCN(self, x_train, y_train, x_val, y_val):
+        """
+        Prepares data specifically for a Temporal Convolutional Network (TCN).
+        Assumes that x_train and x_val are already in shape (samples, time_steps, features).
+        y_train and y_val should be in shape (samples, 2*t_prediction) where we predict 
+        two variables for each time step into the future.
+        """
+        # No reshaping needed for TCN as it expects 3D input for time series data
+        # But we might want to normalize or standardize the data if not already done
+        # Here we'll just return the data as is, assuming it's already preprocessed
+        
+        # TCNs typically work with sequences, so we ensure the time dimension is second
+        return (x_train, y_train), (x_val, y_val)     
