@@ -103,7 +103,7 @@ TCN_SETTINGS = {
     'EVALUATION_METRIC': ['mae', 'mse'],
     'EARLY_STOPPING_PATIENCE': 12,
     'NUM_FILTERS': 64,
-    'DILATION_RATES': [1, 2, 4, 8],
+    'DILATION_RATES': [1, 2, 4],
     'DROPOUT_RATE': 0.3,  # for residual blocks
     'INITIAL_DROPOUT_RATE': 0.2  # for the initial conv layer
 }
