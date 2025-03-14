@@ -7,3 +7,5 @@ tensorflow
 geopandas
 contextily
 jupyterlab
+folium
+streamlit-folium
