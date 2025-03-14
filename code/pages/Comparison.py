@@ -7,15 +7,15 @@ st.title("Model Comparison Across Datasets")
 
 # Sidebar Options
 model_files = {
-    "LSTM": r"C:\Users\amanp\Desktop\MINOR\projj\code\metrics\Brazil\LSTM_Model_26-11-2024-08-30-12.csv",
-    "TCN": r"C:\Users\amanp\Desktop\MINOR\projj\code\metrics\Brazil\TCN_new_model_26-11-2024-08-29-01.csv",
-    "CATBOOST": r"C:\Users\amanp\Desktop\MINOR\projj\code\metrics\Brazil\catboost_normal26-11-2024-08-30-30.csv"
+    "LSTM": r"code/metrics/Brazil/LSTM_Model_26-11-2024-08-30-12.csv",
+    "TCN": r"code/metrics/Brazil/TCN_new_model_26-11-2024-08-29-01.csv",
+    "CATBOOST": r"code/metrics/Brazil/catboost_normal26-11-2024-08-30-30.csv"
 }
 model_files_search = {
-    "LSTM": r"C:\Users\amanp\Desktop\MINOR\projj\code\metrics\Brazil\LSTM_Model_search_26-11-2024-08-10-26.csv",
-    "TCN": r"C:\Users\amanp\Desktop\MINOR\projj\code\metrics\Brazil\TCN_new_model_search_20-02-2025-00-38-31.csv",
-    "CATBOOST": r"C:\Users\amanp\Desktop\MINOR\projj\code\metrics\Brazil\catboost_search_26-11-2024-08-11-11.csv",
-    "TFT": r"C:\Users\amanp\Desktop\MINOR\projj\code\metrics\Brazil\TFT_new_model_search_26-11-2024-10-47-11.csv"
+    "LSTM": r"code/metrics/Brazil/LSTM_Model_search_26-11-2024-08-10-26.csv",
+    "TCN": r"code/metrics/Brazil/TCN_new_model_search_20-02-2025-00-38-31.csv",
+    "CATBOOST": r"code/metrics/Brazil/catboost_search_26-11-2024-08-11-11.csv",
+    "TFT": r"code/metrics/Brazil/TFT_new_model_search_26-11-2024-10-47-11.csv"
 }
 
 # Multiselect for models
