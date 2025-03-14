@@ -8,9 +8,9 @@ st.title("Feature Importance")
 
 # Sidebar Options
 model_files = {
-    "LSTM": r"C:\Users\amanp\Desktop\MINOR\projj\code\metrics\Brazil\LSTM_Model_26-11-2024-08-30-12.csv",
-    "TCN": r"C:\Users\amanp\Desktop\MINOR\projj\code\metrics\Brazil\TCN_new_model_26-11-2024-08-29-01.csv",
-    "CATBOOST": r"C:\Users\amanp\Desktop\MINOR\projj\code\metrics\Brazil\catboost_normal26-11-2024-08-30-30.csv"
+    "LSTM": r"code/metrics/Brazil/LSTM_Model_26-11-2024-08-30-12.csv",
+    "TCN": r"code/metrics/Brazil/TCN_new_model_26-11-2024-08-29-01.csv",
+    "CATBOOST": r"code/metrics/Brazil/catboost_normal26-11-2024-08-30-30.csv"
 }
 
 # Sidebar selection for model
@@ -20,7 +20,7 @@ selected_model = st.sidebar.selectbox(
 )
 
 # Load Original Data
-original_data = pd.read_csv("C:/Users/amanp/Desktop/MINOR/projj/code/dataset/Brazil_UF_dengue_monthly.csv")
+original_data = pd.read_csv("code/dataset/Brazil_UF_dengue_monthly.csv")
 
 # Display Feature Importance
 if selected_model:
