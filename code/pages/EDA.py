@@ -139,7 +139,7 @@ elif eda_option == "Geospatial Ananlysis":
 
 # File paths
     # data_file = r"C:\Users\amanp\Documents\dengue_sorted.csv"
-    geojson_file = r"C:\Users\amanp\Documents\brazil_geo.json"  # Update with actual path to your GeoJSON file
+    geojson_file = r"code/brazil_geo.json"  # Update with actual path to your GeoJSON file
 
 # Load data and GeoJSON
     # data = load_data(data_file)
