@@ -4,6 +4,12 @@
 
 DengueScope is a machine learning-based system designed to predict dengue outbreaks using a diverse set of geospatial, climatic, socio-economic, and human mobility data. The project integrates novel data sources such as Google Trends and Twitter geotagged data to enhance dengue prediction accuracy across Brazilian cities.
 
+![Screenshot](Screenshots/image1.jpeg)
+![Screenshot](Screenshots/image2.jpeg)
+![Screenshot](Screenshots/image3.jpeg)
+![Screenshot](Screenshots/image4.jpeg)
+
+
 ## 🚀 **Project Overview**
 
 Dengue is a major public health concern, especially in tropical regions like Brazil. DengueScope aims to predict dengue outbreaks by leveraging:
